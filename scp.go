@@ -25,6 +25,7 @@ func main() {
 	if session, err := Client.NewSession(); err == nil {
 		defer session.Close()
 		go func() {
+			fmt.Println("enter go func")
 			Buf := make([]byte, 1024)
 			w, _ := session.StdinPipe()
 			defer w.Close()
